@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lumenoid-spatial-trans-annotator"
+version = "0.1.0"
+description = "Napari-based cell boundary annotation tool for producing Cellpose-compatible benchmark masks from DAPI tiles of lumenoid spatial-transcriptomics images."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10,<3.13"
+authors = [{ name = "Matheus Viana" }]
+urls = { Homepage = "https://github.com/AllenCell/lumenoid_spatial_trans_annotator" }
+dependencies = [
+    "napari[all]>=0.4.19",
+    "numpy>=1.24",
+    "tifffile>=2024.1.30",
+    "imagecodecs>=2024.1.1",
+    "pandas>=2.0",
+    "scikit-image>=0.22",
+    "magicgui>=0.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+cell-annotate = "cell_annotation.cli:main"
+cell-annotate-qc = "cell_annotation.qc:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
