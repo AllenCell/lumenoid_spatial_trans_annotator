@@ -1,4 +1,4 @@
-# lumenoid_spatial_trans_annotator
+# Napari-Based Nuclei Annotation Tool for Lumenoid Satial Transcriptomics
 
 A small, focused **napari**-based annotation tool for drawing cell-boundary
 instance masks on DAPI microscopy tiles, producing **Cellpose-compatible**
